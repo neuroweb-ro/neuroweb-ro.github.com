@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!-- #BeginTemplate "ro.dwt" -->
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- #BeginEditable "doctitle" -->
+<title>Contact Dr. Ghervan Ovidiu - Neuroweb</title>
+<meta name="author" content="Neuroweb">
+<meta name="description" content="Neuroweb, Neurologie - Dr. Ghervan Ovidiu, medic primar neurolog">
+<meta name="keywords" content="neurologie">
+<!-- #EndEditable -->
+<link media="screen" rel="stylesheet" href="colorbox/colorbox.css">
+<link href="css/style2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- Begin Container -->
+<div id="container">
+	<!-- Begin Masthead -->
+	<div id="logo">
+		<h3><a class='example8' href="#">Dr. Ghervan Ovidiu</a></h3>
+		<h4>medic primar neurolog</h4>
+	</div>
+	<div id="masthead">
+	<div style="float:right;padding-right:7px;height:140px;width:190px">
+		<img src="img/logo_NeuroWeb_s.png" width="200" height="150" alt=""></div>
+	<!-- #BeginEditable "masthead" -->
+	<p></p>
+	<!-- #EndEditable -->
+	</div>
+	<!-- End Masthead -->
+	<!-- Begin Navigation -->
+	<div id="navigation">
+		<p><a href="index.html">Home</a></p>
+		<!-- #BeginEditable "afectiune" -->
+		<p></p>
+		<!-- #EndEditable -->
+		<p><a href="lista-afectiuni-neurologice.html">Lista afectiuni</a></p>
+		<p><a href="informatii-pacienti.html">Informatii pacienti</a></p>
+		<p><a href="neurofiziologie-clinica.html">Neurofiziologie: EEG,EMG,PE</a></p>
+		<p><a href="propune-site.html">Propune un site</a></p>
+		<p><a href="contact.htm">Contact</a></p>
+		<p><a href="#">Conditii de utilizare</a></p>
+	</div>
+	<!-- End Navigation -->
+	<!-- Begin Content -->
+	<div id="content">
+		<div id="menu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="lista-afectiuni-neurologice.html">Lista afectiuni</a></li>
+				<li><a href="informatii-pacienti.html">Informatii pacienti</a></li>
+				<li><a href="neurofiziologie-clinica.html">Neurofiziologie clinica</a></li>
+				<li><a href="propune-site.html">Propune site</a></li>
+				<li><a href="contact.htm">Contact</a></li>
+			</ul>
+		</div>
+		<!-- #BeginEditable "content" -->
+		<h2>Dr. Ghervan Ovidiu</h2>
+		<div id="cantfindyou"></div>
+		<div id="map"></div>
+		<h3>Neurologie - cabinet medical privat</h3>
+		<p>Str. Closca, nr. ...<br>
+		bloc ... parter<br>
+		Alba Iulia, jud. ALBA</p>
+		<h4>Orar</h4>
+		<p>L ... V: 16 - 20</p>
+		<h4>Telefon</h4>
+		<p>0258 123 456 - programari<br>
+		0799 123 456 - mobil</p>
+		<!-- #EndEditable "content" --></div>
+	<!-- End Content -->
+	<!-- Begin Footer -->
+	<div id="footer">
+		<p><a href="index.html">Home</a> | 
+		<a href="lista-afectiuni-neurologice.html">Lista afectiuni</a> |
+		<a href="informatii-pacienti.html">Informatii pacienti</a> | 
+		<a href="asociatii-pacienti.html">Asociatii pacienti</a> | <a href="linkuri.html">Linkuri</a> |
+		<a href="neurofiziologie-clinica.html">Neurofiziologie clinica</a> | <a href="contact.htm">Contact</a></p>
+	</div>
+	<!-- End Footer --></div>
+<!-- End Container -->
+		<div style='display:none'>
+		<div id='inline_example1' style='padding:10px; background:#fff;'>
+		<h1>Dr. GHERVAN OVIDIU</h1>
+		<h3>medic primar neurolog</h3>
+		</div>
+		</div>
+	<!-- #BeginEditable "scripts" -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAA3lIRg5an7qHvFT_cC2MDGBRqVGk8sgLB3n_P4KwSrApGE1vxlRSrnlN22vseGK6vArwBsKP93Z5Udg"></script> 
+<script type="text/javascript"> 
+google.load("maps", "2.x");
+ 
+google.setOnLoadCallback(function() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var location = "";
+            if (navigator.geolocation.type == "Gears") {
+                if (position.gearsAddress) {
+                    location = [position.gearsAddress.city, position.gearsAddress.region, position.gearsAddress.country].join(', ');
+                } else {
+                    location = "Zoomed in on: " + position.latitude + ", " + position.longitude;
+                }
+            } else if (navigator.geolocation.type == "ClientLocation") {
+                location = [position.address.city, position.address.region, position.address.country].join(', ');
+            } else if (position.coords) {
+		position.latitude = position.coords.latitude;
+		position.longitude = position.coords.longitude;
+	    }
+            createMap(position.latitude, position.longitude, location);
+        }, function() {
+            document.getElementById('cantfindyou').innerHTML = "Crap, I don't know. Good hiding!";
+        });        
+    } else {
+        document.getElementById('cantfindyou').innerHTML = "Crap, I don't know. Good hiding!";
+    }
+});
+ 
+function createMap(lat, lng, location) {
+    var mapElement = document.getElementById("map");
+    mapElement.style.display = 'block';
+    var map = new google.maps.Map2(mapElement);
+    map.addControl(new GLargeMapControl());
+    map.addControl(new GMapTypeControl());
+    map.setCenter(new google.maps.LatLng(lat, lng), 13);
+    map.openInfoWindow(map.getCenter(), document.createTextNode(location));
+}
+</script>
+	<!-- #EndEditable "scripts" -->
+</body>
+
+<!-- #EndTemplate -->
+
+</html>
